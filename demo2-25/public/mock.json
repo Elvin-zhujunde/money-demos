@@ -1,0 +1,74 @@
+{
+  "categories": [
+    { "id": 1, "name": "前端开发" },
+    { "id": 2, "name": "后端开发" },
+    { "id": 3, "name": "移动开发" },
+    { "id": 4, "name": "数据库" },
+    { "id": 5, "name": "云计算" }
+  ],
+  "banners": {
+    "1": [
+      { "id": 1, "title": "Vue.js 实战教程", "image": "linear-gradient(45deg, #1890ff, #36cfc9)" },
+      { "id": 2, "title": "React 高级课程", "image": "linear-gradient(45deg, #722ed1, #1890ff)" }
+    ],
+    "2": [
+      { "id": 3, "title": "Node.js 进阶", "image": "linear-gradient(45deg, #52c41a, #1890ff)" }
+    ]
+  },
+  "hotCourses": [
+    {
+      "id": 1,
+      "title": "Vue.js 3.0 核心技术",
+      "description": "从入门到精通的Vue3学习路线",
+      "teacher": "张老师",
+      "level": "中级",
+      "duration": "24小时",
+      "students": 12580,
+      "price": "¥299",
+      "originalPrice": "¥399",
+      "image": "linear-gradient(45deg, #1890ff, #36cfc9)"
+    },
+    {
+      "id": 2,
+      "title": "React 18 实战开发",
+      "description": "最新React特性与实战项目开发",
+      "teacher": "李老师",
+      "level": "高级",
+      "duration": "32小时",
+      "students": 8750,
+      "price": "¥399",
+      "originalPrice": "¥499",
+      "image": "linear-gradient(45deg, #722ed1, #1890ff)"
+    }
+  ],
+  "categoryCourses": {
+    "1": [
+      {
+        "id": 101,
+        "title": "HTML5+CSS3基础教程",
+        "description": "Web前端开发入门课程",
+        "teacher": "王老师",
+        "level": "初级",
+        "duration": "16小时",
+        "students": 5280,
+        "price": "¥199",
+        "originalPrice": "¥299",
+        "image": "linear-gradient(45deg, #52c41a, #1890ff)"
+      }
+    ],
+    "2": [
+      {
+        "id": 201,
+        "title": "Java核心编程",
+        "description": "Java后端开发必修课",
+        "teacher": "刘老师",
+        "level": "中级",
+        "duration": "40小时",
+        "students": 6800,
+        "price": "¥499",
+        "originalPrice": "¥599",
+        "image": "linear-gradient(45deg, #faad14, #ff4d4f)"
+      }
+    ]
+  }
+}

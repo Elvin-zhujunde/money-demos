@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>商品详情 - 天猫中秋月饼专卖</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <main class="product-detail-page">
+      <div class="product-container">
+        <div class="product-gallery">
+          <div class="main-image">
+            <img src="" alt="" id="main-product-image" />
+          </div>
+          <div class="thumbnail-list">
+            <!-- 缩略图将通过JS动态生成 -->
+          </div>
+        </div>
+
+        <div class="product-info">
+          <h1 class="product-title"></h1>
+          <div class="product-meta">
+            <div class="rating">
+              <span class="stars"></span>
+              <span class="rating-score"></span>
+              <span class="review-count"></span>
+            </div>
+            <div class="sales-info">
+              <span class="sales-count"></span>
+            </div>
+          </div>
+
+          <div class="price-section">
+            <div class="current-price"></div>
+            <div class="original-price"></div>
+          </div>
+
+          <div class="product-specs">
+            <div class="spec-item">
+              <label>规格</label>
+              <div class="spec-options"></div>
+            </div>
+            <div class="spec-item">
+              <label>口味</label>
+              <div class="flavor-options"></div>
+            </div>
+          </div>
+
+          <div class="quantity-selector">
+            <label>数量</label>
+            <div class="quantity-controls">
+              <button class="decrease">-</button>
+              <input type="number" value="1" min="1" />
+              <button class="increase">+</button>
+              <span class="stock-info"></span>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button class="add-to-cart">加入购物车</button>
+            <button class="buy-now">立即购买</button>
+          </div>
+
+          <div class="product-features">
+            <h3>商品特色</h3>
+            <ul class="feature-list">
+              <!-- 特色列表将通过JS动态生成 -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- 提示弹窗 -->
+    <div class="toast-container"></div>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/product-detail.js"></script>
+  </body>
+</html>
+

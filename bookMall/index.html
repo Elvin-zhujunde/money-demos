@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>网上书店</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>网上书店</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="pages/books.html">全部图书</a></li>
+                    <li><a href="pages/cart.html">购物车</a></li>
+                    <li><a href="pages/order.html">我的订单</a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <input type="text" placeholder="搜索图书..." oninput="showSearchDropdown()">
+                <button>搜索</button>
+                <div class="search-dropdown">
+                    <div class="search-item">
+                        <img src="./img/book1.png" alt="书籍封面">
+                        <div class="search-item-info">
+                            <div class="search-item-title">JavaScript高级程序设计</div>
+                            <div class="search-item-author">作者: Nicholas C. Zakas</div>
+                        </div>
+                    </div>
+                    <div class="search-item">
+                        <img src="./img/book2.png" alt="书籍封面">
+                        <div class="search-item-info">
+                            <div class="search-item-title">深入理解计算机系统</div>
+                            <div class="search-item-author">作者: Randal E. Bryant</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容区 -->
+    <main>
+        <!-- 轮播图 -->
+        <div class="slider">
+            <div class="slider-content">
+                <img src="./img/banner1.png" alt="推荐书籍">
+            </div>
+        </div>
+
+        <!-- 热门图书 -->
+        <div class="hot-books container">
+            <h2>热门图书</h2>
+            <div class="book-list">
+                <div class="book-item">
+                    <img src="./img/book1.png" alt="书籍封面">
+                    <h3>JavaScript高级程序设计</h3>
+                    <p class="price">¥99.00</p>
+                    <button onclick="addToCart()">加入购物车</button>
+                </div>
+                <div class="book-item">
+                    <img src="./img/book2.png"  alt="书籍封面">
+                    <h3>深入理解计算机系统</h3>
+                    <p class="price">¥99.00</p>
+                    <button onclick="addToCart()">加入购物车</button>
+                </div>
+                <!-- 更多书籍... -->
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 网上书店 版权所有</p>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script>
+        function showSearchDropdown() {
+            const dropdown = document.querySelector('.search-dropdown');
+            dropdown.classList.add('active');
+            
+            // 点击页面其他地方时隐藏下拉框
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.search')) {
+                    dropdown.classList.remove('active');
+                }
+            });
+        }
+        
+        function addToCart() {
+            alert('加入购物车成功！');
+        }
+    </script>
+</body>
+</html> 

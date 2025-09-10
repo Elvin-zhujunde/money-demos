@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>全部图书 - 网上书店</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .category-nav {
+            background: #f8f9fa;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+        
+        .category-list {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        
+        .category-list a {
+            color: #666;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+        
+        .category-list a:hover {
+            color: #007bff;
+        }
+        
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+        
+        .book-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .book-card img {
+            width: 120px;
+            height: 160px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        
+        .book-info h3 {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        
+        .book-info .author {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .book-info .price {
+            color: #e4393c;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .action-btn {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .action-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>网上书店</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="books.html">全部图书</a></li>
+                    <li><a href="cart.html">购物车</a></li>
+                    <li><a href="order.html">我的订单</a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <input type="text" placeholder="搜索图书...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 分类导航 -->
+        <div class="category-nav">
+            <div class="container">
+                <ul class="category-list">
+                    <li><a href="#">文学小说</a></li>
+                    <li><a href="#">经管励志</a></li>
+                    <li><a href="#">计算机/互联网</a></li>
+                    <li><a href="#">教育考试</a></li>
+                    <li><a href="#">人文社科</a></li>
+                    <li><a href="#">生活艺术</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 图书列表 -->
+        <div class="container">
+            <div class="book-grid">
+                <!-- 图书卡片 1 -->
+                <div class="book-card">
+                    <img src="../img/book1.png" alt="书籍封面">
+                    <div class="book-info">
+                        <h3>JavaScript高级程序设计</h3>
+                        <p class="author">作者: Nicholas C. Zakas</p>
+                        <p class="price">¥99.00</p>
+                        <button class="action-btn" onclick="addToCart()">加入购物车</button>
+                    </div>
+                </div>
+                
+                <!-- 图书卡片 2 -->
+                <div class="book-card">
+                    <img src="../img/book2.png" alt="书籍封面">
+                    <div class="book-info">
+                        <h3>深入理解计算机系统</h3>
+                        <p class="author">作者: Randal E. Bryant</p>
+                        <p class="price">¥139.00</p>
+                        <button class="action-btn" onclick="addToCart()">加入购物车</button>
+                    </div>
+                </div>
+                
+                <!-- 更多图书卡片... -->
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 网上书店 版权所有</p>
+        </div>
+    </footer>
+
+    <script>
+        function addToCart() {
+            alert('加入购物车成功！');
+        }
+    </script>
+</body>
+</html> 

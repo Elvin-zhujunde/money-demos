@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>我的订单 - 网上书店</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .order-container {
+            padding: 40px 0;
+        }
+        
+        .order-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .order-number {
+            color: #666;
+        }
+        
+        .order-status {
+            color: #e4393c;
+        }
+        
+        .order-items {
+            padding: 15px;
+        }
+        
+        .order-item {
+            display: flex;
+            gap: 20px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .order-item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-image {
+            width: 80px;
+            height: 100px;
+            object-fit: cover;
+        }
+        
+        .item-info {
+            flex: 1;
+        }
+        
+        .item-title {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .item-author {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .item-price {
+            color: #e4393c;
+            font-weight: bold;
+        }
+        
+        .order-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .total-amount {
+            font-size: 18px;
+            color: #e4393c;
+        }
+        
+        .action-btn {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        
+        .btn-primary {
+            background: #e4393c;
+            color: #fff;
+        }
+        
+        .btn-secondary {
+            background: #fff;
+            border: 1px solid #ddd;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>网上书店</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="books.html">全部图书</a></li>
+                    <li><a href="cart.html">购物车</a></li>
+                    <li><a href="order.html">我的订单</a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <input type="text" placeholder="搜索图书...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container order-container">
+            <!-- 订单卡片 -->
+            <div class="order-card">
+                <div class="order-header">
+                    <span class="order-number">订单号：2024031500001</span>
+                    <span class="order-status">待付款</span>
+                </div>
+                <div class="order-items">
+                    <div class="order-item">
+                        <img src="../img/book1.png" alt="书籍封面" class="item-image">
+                        <div class="item-info">
+                            <h3 class="item-title">JavaScript高级程序设计</h3>
+                            <p class="item-author">作者: Nicholas C. Zakas</p>
+                            <p class="item-price">¥99.00 × 1</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-footer">
+                    <div class="total-amount">
+                        总计：¥99.00
+                    </div>
+                    <div class="action-buttons">
+                        <button class="action-btn btn-secondary" onclick="cancelOrder()">取消订单</button>
+                        <button class="action-btn btn-primary" onclick="payOrder()">立即付款</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 更多订单... -->
+            <div class="order-card">
+                <div class="order-header">
+                    <span class="order-number">订单号：2024031500002</span>
+                    <span class="order-status">已完成</span>
+                </div>
+                <div class="order-items">
+                    <div class="order-item">
+                        <img src="../img/book2.png" alt="书籍封面" class="item-image">
+                        <div class="item-info">
+                            <h3 class="item-title">深入理解计算机系统</h3>
+                            <p class="item-author">作者: Randal E. Bryant</p>
+                            <p class="item-price">¥139.00 × 1</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-footer">
+                    <div class="total-amount">
+                        总计：¥139.00
+                    </div>
+                    <div class="action-buttons">
+                        <button class="action-btn btn-secondary" onclick="viewDetail()">查看详情</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 网上书店 版权所有</p>
+        </div>
+    </footer>
+
+    <script>
+        function cancelOrder() {
+            alert('订单已取消！');
+        }
+        
+        function payOrder() {
+            alert('即将跳转到支付页面！');
+        }
+        
+        function viewDetail() {
+            alert('查看订单详情！');
+        }
+    </script>
+</body>
+</html> 

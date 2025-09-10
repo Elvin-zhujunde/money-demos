@@ -1,0 +1,65 @@
+/* 轮播图样式 */
+.slider {
+    margin-bottom: 40px;
+}
+
+.slider-content img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* 热门图书区域 */
+.hot-books {
+    padding: 40px 0;
+}
+
+.hot-books h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.book-item {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.book-item img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.book-item h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.price {
+    color: #e4393c;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.book-item button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.book-item button:hover {
+    background: #0056b3;
+} 

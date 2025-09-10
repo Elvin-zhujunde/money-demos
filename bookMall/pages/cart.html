@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车 - 网上书店</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .cart-container {
+            padding: 40px 0;
+        }
+        
+        .cart-header {
+            display: grid;
+            grid-template-columns: 50px 1fr 100px 150px 150px 100px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .cart-item {
+            display: grid;
+            grid-template-columns: 50px 1fr 100px 150px 150px 100px;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+        
+        .book-info {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .book-info img {
+            width: 80px;
+            height: 100px;
+            object-fit: cover;
+        }
+        
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quantity-control button {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ddd;
+            background: #fff;
+            cursor: pointer;
+        }
+        
+        .quantity-control input {
+            width: 50px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        
+        .cart-footer {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px 0;
+            gap: 20px;
+        }
+        
+        .total-price {
+            font-size: 20px;
+            color: #e4393c;
+        }
+        
+        .checkout-btn {
+            padding: 12px 30px;
+            background: #e4393c;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .delete-btn {
+            color: #999;
+            cursor: pointer;
+        }
+        
+        .delete-btn:hover {
+            color: #e4393c;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>网上书店</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="books.html">全部图书</a></li>
+                    <li><a href="cart.html">购物车</a></li>
+                    <li><a href="order.html">我的订单</a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <input type="text" placeholder="搜索图书...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container cart-container">
+            <div class="cart-header">
+                <div>选择</div>
+                <div>商品信息</div>
+                <div>单价</div>
+                <div>数量</div>
+                <div>小计</div>
+                <div>操作</div>
+            </div>
+            
+            <!-- 购物车商品 -->
+            <div class="cart-item">
+                <div>
+                    <input type="checkbox" checked>
+                </div>
+                <div class="book-info">
+                    <img src="../img/book1.png" alt="书籍封面">
+                    <div>
+                        <h3>JavaScript高级程序设计</h3>
+                        <p>作者: Nicholas C. Zakas</p>
+                    </div>
+                </div>
+                <div>¥99.00</div>
+                <div class="quantity-control">
+                    <button onclick="updateQuantity('-')">-</button>
+                    <input type="text" value="1">
+                    <button onclick="updateQuantity('+')">+</button>
+                </div>
+                <div>¥99.00</div>
+                <div class="delete-btn" onclick="deleteItem()">删除</div>
+            </div>
+            
+            <!-- 购物车底部 -->
+            <div class="cart-footer">
+                <div class="total-price">
+                    总计：¥99.00
+                </div>
+                <button class="checkout-btn" onclick="checkout()">结算</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 网上书店 版权所有</p>
+        </div>
+    </footer>
+
+    <script>
+        function updateQuantity(type) {
+            alert('数量已更新！');
+        }
+        
+        function deleteItem() {
+            alert('商品已删除！');
+        }
+        
+        function checkout() {
+            window.location.href = 'checkout.html';
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* 头部样式 */
+header {
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin-left: 40px;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+.search {
+    margin-left: auto;
+    position: relative;
+}
+
+.search input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+.search button {
+    padding: 8px 16px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 主要内容区样式 */
+main {
+    margin-top: 60px;
+    padding: 20px 0;
+}
+
+/* 页脚样式 */
+footer {
+    background: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* 搜索下拉框样式 */
+.search-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 5px;
+    display: none;
+    z-index: 1000;
+}
+
+.search-dropdown.active {
+    display: block;
+}
+
+.search-item {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-item:last-child {
+    border-bottom: none;
+}
+
+.search-item:hover {
+    background: #f8f9fa;
+}
+
+.search-item img {
+    width: 40px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.search-item-info {
+    flex: 1;
+}
+
+.search-item-title {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.search-item-author {
+    font-size: 12px;
+    color: #666;
+} 
