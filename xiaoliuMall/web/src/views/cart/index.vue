@@ -1,0 +1,437 @@
+<template>
+  <div class="cart-container">
+    <div class="container">
+      <div class="cart-header">
+        <h2>购物车</h2>
+        <el-button type="text" @click="$router.push('/')">继续购物</el-button>
+      </div>
+
+      <div class="cart-content" v-if="cartItems.length > 0">
+        <el-table :data="cartItems" style="width: 100%">
+          <el-table-column width="50">
+            <template slot-scope="scope">
+              <el-checkbox v-model="scope.row.selected" @change="handleSelect"></el-checkbox>
+            </template>
+          </el-table-column>
+          <el-table-column label="商品信息" min-width="400">
+            <template slot-scope="scope">
+              <div class="product-info">
+                <img :src="scope.row.cover" :alt="scope.row.title" />
+                <div class="product-detail">
+                  <div class="title">{{ scope.row.title }}</div>
+                  <div class="seller">{{ scope.row.seller_name }}</div>
+                </div>
+              </div>
+            </template>
+          </el-table-column>
+          <el-table-column label="单价" width="150">
+            <template slot-scope="scope">
+              <div class="price">¥{{ scope.row.price }}</div>
+            </template>
+          </el-table-column>
+          <el-table-column label="数量" width="200">
+            <template slot-scope="scope">
+              <el-input-number
+                v-model="scope.row.quantity"
+                :min="1"
+                :max="scope.row.stock"
+                size="small"
+                @change="handleQuantityChange(scope.row)"
+              ></el-input-number>
+            </template>
+          </el-table-column>
+          <el-table-column label="小计" width="150">
+            <template slot-scope="scope">
+              <div class="subtotal">
+                ¥{{ (scope.row.price * scope.row.quantity).toFixed(2) }}
+              </div>
+            </template>
+          </el-table-column>
+          <el-table-column label="操作" width="100">
+            <template slot-scope="scope">
+              <el-button
+                type="text"
+                class="delete-btn"
+                @click="handleDelete(scope.row)"
+              >删除</el-button>
+            </template>
+          </el-table-column>
+        </el-table>
+
+        <!-- 底部结算栏 -->
+        <div class="cart-footer">
+          <div class="left">
+            <el-checkbox v-model="selectAll" @change="handleSelectAll">全选</el-checkbox>
+            <el-button type="text" @click="handleBatchDelete">删除选中</el-button>
+          </div>
+          <div class="right">
+            <div class="total">
+              已选择 <span>{{ selectedCount }}</span> 件商品 
+              合计：<span class="price">¥{{ totalPrice.toFixed(2) }}</span>
+            </div>
+            <el-button
+              type="primary"
+              size="large"
+              :disabled="selectedCount === 0"
+              @click="handleBatchCheckout"
+            >
+              结算
+            </el-button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 空购物车 -->
+      <div class="empty-cart" v-else>
+        <i class="el-icon-shopping-cart-2"></i>
+        <p>购物车还是空的</p>
+        <el-button type="primary" @click="$router.push('/')">去逛逛</el-button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      cartItems: [],
+      loading: false
+    }
+  },
+  computed: {
+    selectAll: {
+      get() {
+        return this.cartItems.length > 0 && this.cartItems.every(item => item.selected)
+      },
+      set(value) {
+        this.cartItems.forEach(item => item.selected = value)
+      }
+    },
+    selectedCount() {
+      return this.cartItems.filter(item => item.selected).length
+    },
+    totalPrice() {
+      return this.cartItems
+        .filter(item => item.selected)
+        .reduce((total, item) => total + item.price * item.quantity, 0)
+    }
+  },
+  created() {
+    this.fetchCartItems()
+  },
+  methods: {
+    async fetchCartItems() {
+      try {
+        const userInfo = JSON.parse(localStorage.getItem('userInfo'))
+        const res = await this.$axios.get(`/api/cart/${userInfo.id}`)
+        if (res.code === 200) {
+          this.cartItems = res.data.map(item => ({
+            ...item,
+            selected: false
+          }))
+        }
+      } catch (error) {
+        console.error('获取购物车失败:', error)
+        this.$message.error('获取购物车失败')
+      }
+    },
+    handleSelect() {
+      // 单个选择时触发，不需要特殊处理
+    },
+    handleSelectAll(value) {
+      this.cartItems.forEach(item => item.selected = value)
+    },
+    async handleBatchDelete() {
+      try {
+        const selectedItems = this.cartItems.filter(item => item.selected)
+        if (selectedItems.length === 0) {
+          this.$message.warning('请选择要删除的商品')
+          return
+        }
+
+        await this.$confirm('确定要删除选中的商品吗？', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        })
+
+        const ids = selectedItems.map(item => item.id)
+        const res = await this.$axios.post('/api/cart/batch-remove', { ids })
+
+        if (res.code === 200) {
+          this.$message.success('删除成功')
+          await this.fetchCartItems()
+        } else {
+          this.$message.error(res.message)
+        }
+      } catch (error) {
+        if (error !== 'cancel') {
+          console.error('批量删除失败:', error)
+          this.$message.error('删除失败')
+        }
+      }
+    },
+    async handleDelete(item) {
+      try {
+        await this.$confirm('确定要删除该商品吗？', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        })
+
+        const res = await this.$axios.delete(`/api/cart/${item.id}`)
+        if (res.code === 200) {
+          this.$message.success('删除成功')
+          await this.fetchCartItems()
+        } else {
+          this.$message.error(res.message)
+        }
+      } catch (error) {
+        if (error !== 'cancel') {
+          console.error('删除失败:', error)
+          this.$message.error('删除失败')
+        }
+      }
+    },
+    async handleQuantityChange(item) {
+      try {
+        const res = await this.$axios.put('/api/cart/quantity', {
+          id: item.id,
+          quantity: item.quantity
+        })
+
+        if (res.code !== 200) {
+          this.$message.error(res.message)
+        }
+      } catch (error) {
+        console.error('更新数量失败:', error)
+        this.$message.error('更新数量失败')
+      }
+    },
+    handleBatchCheckout() {
+      const selectedItems = this.cartItems.filter(item => item.selected)
+      if (selectedItems.length === 0) {
+        this.$message.warning('请选择要结算的商品')
+        return
+      }
+      this.$router.push({
+        path: '/checkout',
+        query: {
+          items: JSON.stringify(selectedItems)
+        }
+      })
+    }
+  }
+}
+</script>
+
+<style scoped>
+.cart-container {
+  padding: 40px 0;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.cart-header h2 {
+  font-size: 28px;
+  color: #000;
+  font-weight: 500;
+  margin: 0;
+}
+
+.cart-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* 商品信息样式 */
+.product-info {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.product-info img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.product-detail {
+  flex: 1;
+}
+
+.product-detail .title {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.product-detail .seller {
+  font-size: 14px;
+  color: #666;
+}
+
+/* 价格样式 */
+.price,
+.subtotal {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+}
+
+/* 删除按钮 */
+.delete-btn {
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  color: #ff4d4f;
+}
+
+/* 底部结算栏 */
+.cart-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  padding: 25px 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.cart-footer .left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.cart-footer .right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.total {
+  font-size: 15px;
+  color: #666;
+}
+
+.total span {
+  color: #333;
+  margin: 0 5px;
+}
+
+.total .price {
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;
+}
+
+/* 空购物车样式 */
+.empty-cart {
+  text-align: center;
+  padding: 80px 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.empty-cart i {
+  font-size: 80px;
+  color: #ddd;
+  margin-bottom: 30px;
+}
+
+.empty-cart p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Element UI 样式覆盖 */
+:deep(.el-table) {
+  border-radius: 8px;
+}
+
+:deep(.el-table::before) {
+  display: none;
+}
+
+:deep(.el-table--enable-row-hover .el-table__body tr:hover > td) {
+  background-color: #f8f8f8;
+}
+
+:deep(.el-table td) {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+:deep(.el-button--primary) {
+  background-color: #000;
+  border-color: #000;
+  height: 44px;
+  padding: 0 30px;
+  font-size: 15px;
+}
+
+:deep(.el-button--primary:hover) {
+  background-color: #333;
+  border-color: #333;
+}
+
+:deep(.el-button--text) {
+  color: #666;
+  font-size: 15px;
+}
+
+:deep(.el-button--text:hover) {
+  color: #000;
+}
+
+:deep(.el-checkbox__input.is-checked .el-checkbox__inner) {
+  background-color: #000;
+  border-color: #000;
+}
+
+:deep(.el-checkbox__inner:hover) {
+  border-color: #000;
+}
+
+:deep(.el-input-number) {
+  width: 130px;
+}
+
+:deep(.el-input-number .el-input-number__decrease),
+:deep(.el-input-number .el-input-number__increase) {
+  background-color: #f8f8f8;
+  border-color: #f0f0f0;
+  color: #666;
+}
+
+:deep(.el-input-number .el-input__inner) {
+  border-color: #f0f0f0;
+  color: #333;
+  font-size: 15px;
+}
+</style>
