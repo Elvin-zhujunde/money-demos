@@ -1,0 +1,182 @@
+{
+  "products": [
+    {
+      "id": 2,
+      "title": "批判与超越",
+      "price": 199.99,
+      "description": "1",
+      "image": "https://tse4-mm.cn.bing.net/th/id/OIP-C.iTXHgsA8xMrk7tV_mh6wxQHaHa?w=186&h=186&c=7&r=0&o=5&dpr=2&pid=1.7",
+      "categoryId": 2,
+      "stock": 150,
+      "sales": 30,
+      "isHot": true
+    },
+    {
+      "id": 3,
+      "title": "给孩子的博物文化课",
+      "price": 259.99,
+      "description": "牛掰",
+      "image": "https://tse2-mm.cn.bing.net/th/id/OIP-C.k0VvrNPwAJYQs3ZvqwUbVwHaHa?w=187&h=186&c=7&r=0&o=5&dpr=2&pid=1.7",
+      "categoryId": 3,
+      "stock": 80,
+      "sales": 40,
+      "isHot": true
+    },
+    {
+      "id": 4,
+      "title": "文学与艺术",
+      "price": 399.99,
+      "description": "12",
+      "image": "https://tse2-mm.cn.bing.net/th/id/OIP-C.yzqp_YtwJM4EUDeTWPdnuwHaKM?w=124&h=180&c=7&r=0&o=5&dpr=2&pid=1.7",
+      "categoryId": 1,
+      "stock": 60,
+      "sales": 20,
+      "isHot": true
+    },
+    {
+      "title": "金融学概论",
+      "categoryId": 4,
+      "price": 110,
+      "stock": 220,
+      "image": "https://tse1-mm.cn.bing.net/th/id/OIP-C.dcwp7N6fHHv-BzLh0yg6pQHaE_?w=273&h=184&c=7&r=0&o=5&dpr=2&pid=1.7",
+      "description": "金融学概论",
+      "isHot": true,
+      "sales": 0,
+      "id": 5
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "文学艺术",
+      "description": "文学艺术"
+    },
+    {
+      "id": 2,
+      "name": "人文社科",
+      "description": "人文社科"
+    },
+    {
+      "id": 3,
+      "name": "少儿图书",
+      "description": "少儿图书"
+    },
+    {
+      "id": 4,
+      "name": "金融经济",
+      "description": "金融经济"
+    },
+    {
+      "id": 5,
+      "name": "生活休闲",
+      "description": "生活休闲"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123456",
+      "role": "admin",
+      "email": "admin@example.com",
+      "phone": "13800138000",
+      "address": "北京市朝阳区",
+      "createTime": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "username": "user1",
+      "password": "123456",
+      "role": "user",
+      "email": "user1@exa2ple.com",
+      "phone": "13800138002",
+      "address": "上海市浦东新区",
+      "createTime": "2024-01-02T00:00:00.000Z"
+    },
+    {
+      "username": "aren1",
+      "password": "123456",
+      "email": "1@qq.com",
+      "phone": "13144445555",
+      "role": "user",
+      "createTime": "2024-12-11T00:39:05.799Z",
+      "id": 3
+    }
+  ],
+  "cart": [
+    {
+      "userId": 3,
+      "productId": 4,
+      "quantity": 1,
+      "selected": true,
+      "createTime": "2024-12-11T00:39:31.992Z",
+      "id": 4
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 2,
+      "orderNo": "202403140001",
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 1,
+          "price": 299.99
+        }
+      ],
+      "status": "completed",
+      "totalAmount": 299.99,
+      "address": "上海市浦东新区",
+      "phone": "13800138001",
+      "createTime": "2024-03-14T10:00:00.000Z",
+      "updateTime": "2024-12-10T14:57:22.994Z"
+    },
+    {
+      "userId": 2,
+      "orderNo": "202412068099",
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 1,
+          "price": 299.99
+        },
+        {
+          "productId": 3,
+          "quantity": 1,
+          "price": 259.99
+        }
+      ],
+      "status": "completed",
+      "totalAmount": 559.98,
+      "address": "上海市浦东新区",
+      "phone": "13800138002",
+      "createTime": "2024-12-06T01:22:31.568Z",
+      "updateTime": "2024-12-06T01:23:16.004Z",
+      "id": 13
+    },
+    {
+      "userId": 2,
+      "orderNo": "202412114246",
+      "products": [
+        {
+          "productId": 3,
+          "quantity": 1,
+          "price": 259.99
+        },
+        {
+          "productId": 2,
+          "quantity": 1,
+          "price": 199.99
+        }
+      ],
+      "status": "shipping",
+      "totalAmount": 459.98,
+      "address": "上海市浦东新区",
+      "phone": "13800138002",
+      "createTime": "2024-12-11T02:51:13.916Z",
+      "updateTime": "2024-12-11T02:53:50.727Z",
+      "id": 18
+    }
+  ]
+}
