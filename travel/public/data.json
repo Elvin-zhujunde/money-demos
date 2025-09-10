@@ -1,0 +1,55 @@
+{
+    "travel": [
+        {
+            "id": 1,
+            "title": "漫步京都的古老街道",
+            "summary": "一段穿越时空的文化之旅，探索千年古都的精致与优雅",
+            "content": "京都，这座千年古都承载着日本最精致的文化底蕴。漫步在清水寺的古老木台上，聆听着悠远的木屐声，仿佛穿越回了平安时代。金阁寺在夕阳下熠熠生辉，倒映在镜湖池中的景象更是让人屏息。在祗园区，我有幸邂逅了几位身着华丽和服的舞伎，她们优雅的步伐和精致的妆容，无不诉说着京都对传统文化的坚守。晚餐时分，在一家百年老字号怀石料理店，品尝到了正宗的京都料理，每一道菜品都是艺术品。","author": "小明","date": "2024-03-15","coverImage": "https://picsum.photos/800/600?random=1",
+            "views": 1234,
+            "likes": 88,
+            "featured": true,
+            "category": "文化探索",
+            "location": "日本京都",
+            "images": [
+                "https://picsum.photos/800/600?random=11",
+                "https://picsum.photos/800/600?random=12",
+                "https://picsum.photos/800/600?random=13"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "云南大理：苍山洱海间的慢生活",
+            "summary": "在古城与自然之间寻找内心的平静，感受白族文化的独特魅力",
+            "content": "大理古城里的每一条小巷都诉说着悠久的历史。清晨，在洱海边等待日出，看着渔民撒网的身影，金色的阳光洒在波光粼粼的湖面上。漫步在双廊古镇，白墙黛瓦间藏着数不尽的故事。午后，在一家老字号喝着白族三道茶，听老人讲述着关于这片土地的传说。傍晚时分，登上苍山，俯瞰整个大理坝子，远处的村落炊烟袅袅。","author": "小红","date": "2024-03-10","coverImage": "https://picsum.photos/800/600?random=2",
+            "views": 2345,
+            "likes": 120,
+            "featured": true,
+            "category": "人文风光",
+            "location": "云南大理",
+            "images": [
+                "https://picsum.photos/800/600?random=21",
+                "https://picsum.photos/800/600?random=22",
+                "https://picsum.photos/800/600?random=23"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "马尔代夫：遇见最纯净的海",
+            "summary": "在印度洋上的明珠中，邂逅最梦幻的海岛度假时光",
+            "content": "马尔代夫的美，远不止是图片上看到的那样。清晨，被印度洋的微风唤醒，推开水上屋的门，就能看到色彩层次分明的海水。上午，跟着向导去浮潜，和海龟一起游泳，看着彩色的热带鱼从身边游过。傍晚，在沙滩上漫步，细软的白沙从脚趾间流过。夜晚降临，躺在沙滩上数星星，看着银河在头顶闪耀，听着海浪的声音，仿佛整个世界都安静了下来。",
+            "author": "小张",
+            "date": "2024-03-05",
+            "coverImage": "https://picsum.photos/800/600?random=3",
+            "views": 3456,
+            "likes": 150,
+            "featured": true,
+            "category": "海岛度假",
+            "location": "马尔代夫",
+            "images": [
+                "https://picsum.photos/800/600?random=31",
+                "https://picsum.photos/800/600?random=32",
+                "https://picsum.photos/800/600?random=33"
+            ]
+        }
+    ]
+}

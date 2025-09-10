@@ -1,0 +1,101 @@
+// 在原有的 mockData 中更新图片链接
+export const mockData = {
+  // ... categories 保持不变
+  banners: {
+    1: [
+      {
+        id: 1,
+        title: '计算机组成原理精讲',
+        image: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("https://images.unsplash.com/photo-1518770660439-4636190af475")',
+        desc: '从硬件到软件的完整计算机体系讲解'
+      },
+      {
+        id: 2,
+        title: '数据结构与算法',
+        image: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("https://images.unsplash.com/photo-1515879218367-8466d910aaa4")',
+        desc: '核心数据结构与经典算法详解'
+      },
+      {
+        id: 3,
+        title: '操作系统原理',
+        image: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31")',
+        desc: '深入理解计算机操作系统'
+      }
+    ],
+    // ... 其他 banners 类似更新
+  },
+  categoryCourses: {
+    1: [
+      {
+        id: 101,
+        title: '计算机组成原理',
+        description: '深入理解计算机硬件体系结构，包括CPU、内存、总线等核心概念',
+        image: 'url("https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b")',
+        price: '¥299',
+        originalPrice: '¥399',
+        students: 12345,
+        tags: ['计算机基础', '必修课'],
+        teacher: '王教授',
+        level: '中级',
+        duration: '32学时'
+      },
+      {
+        id: 102,
+        title: '数据结构基础',
+        description: '常用数据结构详解，包括数组、链表、树、图等，配合算法实战练习',
+        image: 'url("https://images.unsplash.com/photo-1516116216624-53e697fedbea")',
+        price: '¥399',
+        originalPrice: '¥599',
+        students: 8765,
+        tags: ['算法', '基础课'],
+        teacher: '李教授',
+        level: '中级',
+        duration: '48学时'
+      },
+    ],
+    2: [
+      {
+        id: 201,
+        title: 'Python程序设计',
+        description: 'Python语言基础知识与高级特性，结合实际案例讲解',
+        image: 'url("https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5")',
+        price: '¥199',
+        originalPrice: '¥299',
+        students: 23456,
+        tags: ['Python', '入门'],
+        teacher: '张教授',
+        level: '初级',
+        duration: '24学时'
+      },
+    ],
+  },
+  hotCourses: [
+    {
+      id: 1,
+      title: 'Vue.js 3.0 企业级应用开发',
+      description: '从基础到高级的Vue3完整课程，包含组合式API、响应式原理、性能优化等核心知识',
+      image: 'url("https://images.unsplash.com/photo-1627398242454-45a1465c2479")',
+      price: '¥399',
+      originalPrice: '¥599',
+      students: 12345,
+      tags: ['Vue3', '实战', '热门'],
+      teacher: '张教授',
+      level: '中级',
+      duration: '24小时'
+    },
+    {
+      id: 2,
+      title: 'React 18 实战开发教程',
+      description: '最新React特性讲解，结合实际项目的完整课程，包括Hooks、状态管理、性能优化等',
+      image: 'url("https://images.unsplash.com/photo-1633356122544-f134324a6cee")',
+      price: '¥499',
+      originalPrice: '¥699',
+      students: 8765,
+      tags: ['React', 'Hooks', '进阶'],
+      teacher: '李老师',
+      level: '高级',
+      duration: '32小时'
+    },
+    // ... 其他课程图片类似更新
+  ]
+}
