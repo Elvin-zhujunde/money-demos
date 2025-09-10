@@ -1,0 +1,182 @@
+{
+  "products": [
+    {
+      "id": 2,
+      "title": "蓝色外套",
+      "price": 199.99,
+      "description": "轻便实用，日常出行必备",
+      "image": "https://th.bing.com/th/id/R.b1a5246094980ed3a2f74285e5d17b7f?rik=IkkJgzzQ%2fzPYzg&riu=http%3a%2f%2fwww.sitned.com%2fUploadFiles%2fOthers%2f201908021527479417754.jpg&ehk=QKgP12lub3AUdKudtEWeQyR2OAYO%2fRb5klFwRCCsQbI%3d&risl=&pid=ImgRaw&r=0",
+      "categoryId": 2,
+      "stock": 150,
+      "sales": 30,
+      "isHot": true
+    },
+    {
+      "id": 3,
+      "title": "斯伯丁篮球",
+      "price": 259.99,
+      "description": "牛掰",
+      "image": "https://th.bing.com/th/id/OIP.HOU4hmfxOoKRXRbIh_h6qgHaHa?w=169&h=180&c=7&r=0&o=5&dpr=2&pid=1.7",
+      "categoryId": 3,
+      "stock": 80,
+      "sales": 40,
+      "isHot": true
+    },
+    {
+      "id": 4,
+      "title": "XX健身卡",
+      "price": 399.99,
+      "description": "高端商务",
+      "image": "https://th.bing.com/th/id/OIP.ZD1HZBg35aJbdX6XdJn7TwHaH1?w=179&h=190&c=7&r=0&o=5&dpr=2&pid=1.7",
+      "categoryId": 1,
+      "stock": 60,
+      "sales": 20,
+      "isHot": true
+    },
+    {
+      "title": "羽毛球拍",
+      "categoryId": 3,
+      "price": 110,
+      "stock": 220,
+      "image": "https://th.bing.com/th/id/OIP.cBAm974Nq-mAGk6GUkq8LAHaE8?w=280&h=186&c=7&r=0&o=5&dpr=2&pid=1.7",
+      "description": "羽毛球",
+      "isHot": true,
+      "sales": 0,
+      "id": 5
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "👔商务运动",
+      "icon": "Briefcase",
+      "description": "专业商务，品质保证"
+    },
+    {
+      "id": 2,
+      "name": "👔运动服装",
+      "icon": "ShoppingBag",
+      "description": "轻松休闲，随心所欲"
+    },
+    {
+      "id": 3,
+      "name": "⚽️球类",
+      "icon": "Basketball",
+      "description": "专业运动"
+    },
+    {
+      "id": 4,
+      "name": "⚽️健身类",
+      "icon": "Basketball",
+      "description": "健身专用"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123456",
+      "role": "admin",
+      "email": "admin@example.com",
+      "phone": "13800138000",
+      "address": "北京市朝阳区",
+      "createTime": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "username": "user1",
+      "password": "123456",
+      "role": "user",
+      "email": "user1@exa2ple.com",
+      "phone": "13800138002",
+      "address": "上海市浦东新区",
+      "createTime": "2024-01-02T00:00:00.000Z"
+    },
+    {
+      "username": "aren",
+      "password": "123456",
+      "email": "1@qq.com",
+      "phone": "13144445555",
+      "role": "user",
+      "createTime": "2024-12-11T00:39:05.799Z",
+      "id": 3
+    }
+  ],
+  "cart": [
+    {
+      "userId": 2,
+      "productId": 3,
+      "quantity": 1,
+      "selected": true,
+      "createTime": "2024-12-10T14:48:47.106Z",
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "productId": 2,
+      "quantity": 1,
+      "selected": true,
+      "createTime": "2024-12-11T00:36:32.455Z",
+      "id": 3
+    },
+    {
+      "userId": 3,
+      "productId": 4,
+      "quantity": 1,
+      "selected": true,
+      "createTime": "2024-12-11T00:39:31.992Z",
+      "id": 4
+    },
+    {
+      "userId": 3,
+      "productId": 3,
+      "quantity": 1,
+      "selected": true,
+      "createTime": "2024-12-26T03:32:34.665Z",
+      "id": 5
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 2,
+      "orderNo": "202403140001",
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 1,
+          "price": 299.99
+        }
+      ],
+      "status": "completed",
+      "totalAmount": 299.99,
+      "address": "上海市浦东新区",
+      "phone": "13800138001",
+      "createTime": "2024-03-14T10:00:00.000Z",
+      "updateTime": "2024-12-10T14:57:22.994Z"
+    },
+    {
+      "userId": 2,
+      "orderNo": "202412068099",
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 1,
+          "price": 299.99
+        },
+        {
+          "productId": 3,
+          "quantity": 1,
+          "price": 259.99
+        }
+      ],
+      "status": "completed",
+      "totalAmount": 559.98,
+      "address": "上海市浦东新区",
+      "phone": "13800138002",
+      "createTime": "2024-12-06T01:22:31.568Z",
+      "updateTime": "2024-12-06T01:23:16.004Z",
+      "id": 13
+    }
+  ]
+}
