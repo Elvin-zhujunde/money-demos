@@ -1,0 +1,29 @@
+{
+  "reviews": [
+    {
+      "id": 1,
+      "restaurantId": 1,
+      "username": "美食家",
+      "userAvatar": "https://via.placeholder.com/100x100?text=User1",
+      "rating": 5,
+      "content": "菜品非常美味,环境优雅,服务态度很好",
+      "images": [
+        "https://via.placeholder.com/400x300?text=Review1",
+        "https://via.placeholder.com/400x300?text=Review2"
+      ],
+      "date": "2023-08-01"
+    },
+    {
+      "id": 2,
+      "restaurantId": 1,
+      "username": "吃货小王",
+      "userAvatar": "https://via.placeholder.com/100x100?text=User2",
+      "rating": 4,
+      "content": "味道不错,就是价格稍贵",
+      "images": [
+        "https://via.placeholder.com/400x300?text=Review3"
+      ],
+      "date": "2023-08-02"
+    }
+  ]
+} 

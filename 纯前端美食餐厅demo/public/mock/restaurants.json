@@ -1,0 +1,50 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "江南小馆",
+      "cuisine": "江浙菜",
+      "rating": 4.5,
+      "averagePrice": 88,
+      "address": "上海市黄浦区南京东路123号",
+      "image": "https://via.placeholder.com/800x400?text=Restaurant1",
+      "menu": [
+        {
+          "id": 1,
+          "name": "红烧狮子头",
+          "price": 48,
+          "image": "https://via.placeholder.com/400x300?text=Dish1"
+        },
+        {
+          "id": 2,
+          "name": "东坡肉",
+          "price": 68,
+          "image": "https://via.placeholder.com/400x300?text=Dish2"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "蜀香园",
+      "cuisine": "川菜",
+      "rating": 4.7,
+      "averagePrice": 98,
+      "address": "上海市长宁区长宁路456号",
+      "image": "https://via.placeholder.com/800x400?text=Restaurant2",
+      "menu": [
+        {
+          "id": 3,
+          "name": "麻婆豆腐",
+          "price": 32,
+          "image": "https://via.placeholder.com/400x300?text=Dish3"
+        },
+        {
+          "id": 4,
+          "name": "水煮鱼",
+          "price": 88,
+          "image": "https://via.placeholder.com/400x300?text=Dish4"
+        }
+      ]
+    }
+  ]
+} 
